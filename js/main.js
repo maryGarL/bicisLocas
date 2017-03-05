@@ -8,23 +8,27 @@ function validateForm(){
 	if(nombre.value.length == 0 ){
 		alert("Ingresa tu Nombre");
 	}
-	else if(){
+	else if(characterAllowed.test(nombre.value)== false){
 		alert("Solo vamos a aceptar letras!");
 	}
 	else if(nombre.value.charAt(0) != nombre.value.charAt(0).toUpperCase()){
 		alert("Tu Nombre Debe comenzar con Mayúscula");
 	}
-	/*
-	if((nombre.value=="")||(expreRegular.test(nombre.value)==false)||(nombre.value.toString().charAt(0).toUpperCase()+nombre.value.toString().slice(1).toLowerCase()==false)){
-		alert("Ingrese correctamente su nombre");
-	};
-	if((apellido.value=="")||((expreRegular.test(apellido.value)==false)||(apellido.value.toString().charAt(0).toUpperCase()+apellido.value.toString().slice(1).toLowerCase()==false))){
-		alert("Ingrese correctamente su apellido");
-	};
+
+	if(apellido.value.length == 0 ){
+		alert("Ingresa tu apellido");
+	}
+	else if(characterAllowed.test(apellido.value)== false){
+		alert("Solo vamos a aceptar letras!");
+	}
+	else if(apellido.value.charAt(0) != apellido.value.charAt(0).toUpperCase()){
+		alert("Tu apellido Debe comenzar con Mayúscula");
+	}
+
 	if(email.value==""){
-		alert("Ingreso correctamente su apellido");
+		alert("Ingrese su email");
 	};
 	if((pasword.value=="")||(pasword.value.length>=7)||( pasword.value=="password")||(pasword.value=="123456")||(pasword.value=="098754")){
 		alert("Ingreso correctamente su contraseña");
-	}*/
+	}
 }
