@@ -3,8 +3,9 @@ function validateForm(){
 	var apellido= document.getElementById('lastname');
 	var email= document.getElementById('input-email');
 	var pasword=document.getElementById('input-password')
+	var indice = document.getElementById("form-control1")
 	var characterAllowed = /^[a-zA-Z]+$/;
-
+	var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 	if(nombre.value.length == 0 ){
 		alert("Ingresa tu Nombre");
 	}
@@ -25,10 +26,14 @@ function validateForm(){
 		alert("Tu apellido Debe comenzar con Mayúscula");
 	}
 
-	if(email.value==""){
-		alert("Ingrese su email");
+	if((email.value=="")||(emailRegex.test(email.value)==false)){
+		alert("Ingrese un email valido");
 	};
+
 	if((pasword.value=="")||(pasword.value.length>=7)||( pasword.value=="password")||(pasword.value=="123456")||(pasword.value=="098754")){
-		alert("Ingreso correctamente su contraseña");
+		alert("Ingreso correctamente su contraseña");}
+
+if( indice.selectedIndex == null || indice.selectedIndex == 0 ) {
+  alert("Seleccione una opcion");
 	}
 }
